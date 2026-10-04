@@ -1,0 +1,21 @@
+/* TravelGo Admin shared sidebar */
+:root{--tg-blue:#0797d5;--tg-navy:#071d35;--tg-bg:#f4f7fb}
+body{background:var(--tg-bg)!important}
+.tg-admin-sidebar{position:fixed;z-index:1000;left:0;top:0;bottom:0;width:255px;background:linear-gradient(180deg,#071d35 0%,#0b2944 100%);color:#fff;display:flex;flex-direction:column;box-shadow:8px 0 25px rgba(15,35,55,.12)}
+.tg-admin-brand{height:82px;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.09)}
+.tg-admin-brand a{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none}
+.tg-admin-brand-icon{width:48px;height:48px;border-radius:14px;background:#0797d5;display:grid;place-items:center;font-size:21px;box-shadow:0 8px 20px rgba(7,151,213,.25)}
+.tg-admin-brand b{display:block;font-size:20px;letter-spacing:-.3px}.tg-admin-brand small{display:block;color:#8ea6bb;font-size:9px;font-weight:700;letter-spacing:1.5px;margin-top:2px}
+.tg-admin-nav{padding:17px 12px;display:flex;flex-direction:column;gap:5px;overflow:auto}
+.tg-admin-nav a,.tg-admin-sidebar-bottom a{display:flex;align-items:center;gap:13px;color:#b9c9d7;text-decoration:none;padding:12px 14px;border-radius:10px;font-weight:600;font-size:14px;transition:.2s}
+.tg-admin-nav a i,.tg-admin-sidebar-bottom a i{width:20px;text-align:center}
+.tg-admin-nav a:hover{background:rgba(255,255,255,.07);color:#fff}.tg-admin-nav a.active{background:#078fd0;color:#fff;box-shadow:0 7px 18px rgba(0,143,207,.25)}
+.tg-admin-sidebar-bottom{margin-top:auto;padding:12px;border-top:1px solid rgba(255,255,255,.09)}
+.tg-admin-sidebar-bottom a{margin-bottom:4px}.tg-admin-sidebar-bottom a:hover{background:rgba(255,255,255,.07);color:#fff}.tg-admin-sidebar-bottom .logout{color:#ff9b9b}
+.tg-admin-menu-btn{display:none;position:fixed;z-index:1100;top:14px;left:14px;width:43px;height:43px;border:0;border-radius:11px;background:#0797d5;color:#fff;font-size:18px;box-shadow:0 7px 20px rgba(0,0,0,.18)}
+.tg-admin-overlay{display:none}
+/* Keep existing admin content readable beside the sidebar */
+body:has(.tg-admin-sidebar)>header,body:has(.tg-admin-sidebar)>main{margin-left:255px}
+body:has(.tg-admin-sidebar)>header{max-width:none!important}
+body:has(.tg-admin-sidebar)>main{width:auto!important}
+@media(max-width:900px){.tg-admin-sidebar{transform:translateX(-100%);transition:.25s}.tg-admin-sidebar.open{transform:translateX(0)}.tg-admin-menu-btn{display:block}.tg-admin-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999}.tg-admin-sidebar.open~.tg-admin-overlay{display:block}body:has(.tg-admin-sidebar)>header,body:has(.tg-admin-sidebar)>main{margin-left:0!important}.tg-admin-sidebar-bottom{padding-bottom:20px}}

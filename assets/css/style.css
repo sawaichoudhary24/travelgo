@@ -1,0 +1,369 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    
+    
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+#mobileMenu a {
+    color: #334155;
+    font-weight: 500;
+}
+
+#mobileMenu a:hover {
+    color: #0ea5e9;
+}
+
+
+/* =========================================================
+   CUSTOM CURSOR BALL
+   ========================================================= */
+
+.cursor-ball {
+    width: 10px;
+    height: 10px;
+
+    /* BLUE BALL */
+    background-color: #2563eb;
+
+    /* White border */
+    border: 2px solid #ffffff;
+
+    border-radius: 50%;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    /* Ball sabhi elements ke upar rahe */
+    z-index: 99999;
+
+    transform: translate(-50%, -50%);
+
+    /* Blue glow */
+    box-shadow:
+        0 0 0 2px rgba(37, 99, 235, 0.18),
+        0 0 12px rgba(37, 99, 235, 0.55),
+        0 0 25px rgba(37, 99, 235, 0.35);
+
+    /* White background par bhi blue visible */
+    mix-blend-mode: normal;
+
+    opacity: 1;
+    visibility: visible;
+
+    will-change:
+        transform,
+        width,
+        height,
+        border-radius,
+        opacity,
+        background-color;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        width 0.25s ease,
+        height 0.25s ease,
+        border-radius 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   HEADER PAR BALL HIDE
+   ========================================================= */
+
+.cursor-ball.header-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* =========================================================
+   CURSOR HOVER EFFECT
+   ========================================================= */
+
+.cursor-ball.is-hover {
+    width: 34px;
+    height: 34px;
+
+    background-color: #2563eb;
+
+    border: 2px solid #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.15),
+        0 0 20px rgba(37, 99, 235, 0.65),
+        0 0 35px rgba(37, 99, 235, 0.35);
+}
+
+
+/* =========================================================
+   SCROLLTRIGGER ANIMATIONS
+   ========================================================= */
+
+/* General reveal */
+.tg-reveal {
+    will-change: transform, opacity;
+}
+
+/* Fade animation */
+.tg-fade {
+    will-change: transform, opacity;
+}
+
+/* Scale animation */
+.tg-scale {
+    will-change: transform, opacity;
+}
+
+/* Slide up */
+.tg-slide-up {
+    will-change: transform, opacity;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+   ========================================================= */
+
+.tg-image-wrap {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PARALLAX IMAGE
+   ========================================================= */
+
+.tg-parallax-img {
+    will-change: transform;
+
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   DESTINATION CARDS
+   ========================================================= */
+
+.destination-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-6px);
+}
+
+
+/* Destination image
+   TOP CORNERS ROUND NAHI HONGE */
+.destination-card img {
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   DESTINATION CARD IMAGE
+   ========================================================= */
+
+.destination-card .destination-image {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+
+/* =========================================================
+   PACKAGE CARDS
+   ========================================================= */
+
+.package-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   HIGHLIGHTS & EXPERIENCES
+   ========================================================= */
+
+.highlight-card {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.highlight-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.highlight-card:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-image {
+    width: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+   ========================================================= */
+
+.tg-button {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tg-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2563eb;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Mobile par custom cursor nahi */
+    .cursor-ball {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+
+    .destination-card .destination-image {
+        height: 200px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .destination-card .destination-image {
+        height: 190px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .tg-reveal,
+    .tg-fade,
+    .tg-scale,
+    .tg-slide-up,
+    .tg-parallax-img {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+
+    .destination-card,
+    .package-card,
+    .highlight-card img,
+    .tg-button {
+        transition: none !important;
+    }
+}
